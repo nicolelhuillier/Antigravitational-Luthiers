@@ -15,11 +15,13 @@ public void setup()
   smooth();
 
   //gyro 1
-  gyro01 = new GyroBuss("http://18.111.10.32/");
-  gyro02 = new GyroBuss("http://18.111.10.32/");
-  gyro03 = new GyroBuss("http://18.111.10.32/");
-  gyro04 = new GyroBuss("http://18.111.10.32/");
-  gyro05= new GyroBuss("http://18.111.10.32/"); 
+
+  gyro01 = new GyroBuss("http://18.111.22.145/");
+  gyro02 = new GyroBuss("http://18.111.26.121/");
+  gyro03 = new GyroBuss("http://18.111.2.182/");
+  gyro04 = new GyroBuss("http://18.111.2.12/");
+  gyro05= new GyroBuss("http://18.111.27.196/"); 
+
 
   //delta theshold value
   gyro01.setDeltaThreshold(2, 8, 5);
@@ -43,10 +45,12 @@ public void setup()
   gyro03.setRangeGyroY(-220, 200);
   gyro03.setRangeGyroZ(-220, 200);
 
+
   //mapping range
   gyro04.setRangeGyroX(-220, 200);
   gyro04.setRangeGyroY(-220, 200);
   gyro04.setRangeGyroZ(-220, 200);
+
 
   //mapping range
   gyro05.setRangeGyroX(-220, 200);
@@ -55,10 +59,10 @@ public void setup()
 
   //set channel midi output for z, y, z
   gyro01.setChannel(0, 0, 0);
-  gyro02.setChannel(0, 0, 0);
-  gyro03.setChannel(0, 0, 0);
-  gyro04.setChannel(0, 0, 0);
-  gyro05.setChannel(0, 0, 0);
+  gyro02.setChannel(1, 1, 1);
+  gyro03.setChannel(2, 2, 2);
+  gyro04.setChannel(3, 3, 3);
+  gyro05.setChannel(4, 4, 4);
 
 
   frameRate(60); // 60 frames por segundo
@@ -75,6 +79,7 @@ void draw() {
   gyro03.processGyroMidi();
   gyro04.processGyroMidi();
   gyro05.processGyroMidi();
+
 }
 
 void keyPressed() {
